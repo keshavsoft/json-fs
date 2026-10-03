@@ -1,0 +1,21 @@
+{
+    "src/v5/Unit.js": "import { masters } from \"tally-xml-tdl\";\nimport jsonTransformer from \"@keshavsoft/json-transformer\";\n\nimport transformation from \"./transformation.json\" with { type: \"json\" };\n\nconst startFunc = async (inCompanyName) => {\n    const fromNpm = await masters.Unit.all(inCompanyName);\n    const fromTransform = await jsonTransformer(fromNpm?.ENVELOPE?.BODY?.DATA?.COLLECTION, transformation);\n    return await fromTransform?.Units;\n};\n\nexport default startFunc;\n",
+    "src/v5/transformation.json": {
+        "transform": {
+            "UNIT": {
+                "alterKey": "Units"
+            }
+        },
+        "Units": {
+            "transform": {
+                "@_NAME": {
+                    "alterKey": "Name"
+                },
+                "@_RESERVEDNAME": {
+                    "alterKey": "ReserveName"
+                }
+            }
+        }
+    },
+    "src/v5/index.js": "export { default, default as Unit } from \"./Unit.js\";\nexport { default as StockItem } from \"./StockItem/index.js\";\nexport { default as Ledger } from \"./Ledger/index.js\";\nexport { default as vouchers } from \"./vouchers/index.js\";\n"
+}

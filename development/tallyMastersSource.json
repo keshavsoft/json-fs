@@ -1,0 +1,49 @@
+{
+    "name": "src",
+    "type": "folder",
+    "children": [
+        {
+            "name": "v5",
+            "type": "folder",
+            "children": [
+                { "name": "index.js", "type": "file" },
+                { "name": "Unit.js", "type": "file" },
+                { "name": "transformation.json", "type": "file" },
+                {
+                    "name": "StockItem",
+                    "type": "folder",
+                    "children": [
+                        { "name": "index.js", "type": "file" },
+                        { "name": "withBatches.js", "type": "file" },
+                        { "name": "transformation.json", "type": "file" }
+                    ]
+                },
+                {
+                    "name": "Ledger",
+                    "type": "folder",
+                    "children": [
+                        { "name": "index.js", "type": "file" },
+                        { "name": "withGstDetails.js", "type": "file" },
+                        { "name": "transformation.json", "type": "file" }
+                    ]
+                },
+                {
+                    "name": "vouchers",
+                    "type": "folder",
+                    "children": [
+                        { "name": "index.js", "type": "file" },
+                        {
+                            "name": "sales",
+                            "type": "folder",
+                            "children": [
+                                { "name": "index.js", "type": "file" },
+                                { "name": "simple.js", "type": "file" },
+                                { "name": "transformation.json", "type": "file" }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

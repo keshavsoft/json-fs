@@ -1,6 +1,6 @@
 {
   "name": "@keshavsoft/json-fs",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "JSON-driven folder and file scaffolding engine. Takes a JSON source-of-truth tree and creates the real folder/file structure on disk.",
   "type": "module",
   "main": "./src/index.js",
