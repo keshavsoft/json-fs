@@ -1,21 +1,25 @@
 {
-    "name": "my-project",
+    "name": "tally",
     "type": "folder",
     "children": [
         {
-            "name": "src",
+            "name": "masters",
             "type": "folder",
             "children": [
                 {
-                    "name": "utils",
+                    "name": "units",
                     "type": "folder",
                     "children": [
                         {
-                            "name": "helper.js",
+                            "name": "all.js",
                             "type": "file"
                         },
                         {
-                            "name": "constants.js",
+                            "name": "body.xml",
+                            "type": "file"
+                        },
+                        {
+                            "name": "index.js",
                             "type": "file"
                         }
                     ]
@@ -27,17 +31,7 @@
             ]
         },
         {
-            "name": "docs",
-            "type": "folder",
-            "children": [
-                {
-                    "name": "README.md",
-                    "type": "file"
-                }
-            ]
-        },
-        {
-            "name": "package.json",
+            "name": "index.js",
             "type": "file"
         }
     ]

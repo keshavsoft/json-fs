@@ -1,12 +1,7 @@
 {
-    "my-project/package.json": {
-        "name": "my-sample-project",
-        "version": "1.0.0",
-        "description": "Generated via json-fs v2",
-        "main": "src/index.js"
-    },
-    "my-project/src/index.js": "// Application entry point\nconsole.log('App successfully launched!');\nexport default {};\n",
-    "my-project/src/utils/helper.js": "export const greet = (name) => `Hello, ${name}!`;\n",
-    "my-project/src/utils/constants.js": "export const APP_NAME = 'MySampleApp';\nexport const VERSION = '1.0.0';\n",
-    "my-project/docs/README.md": "# My Sample Project\n\nGenerated automatically via json-fs v2.\n"
+    "tally/masters/units/body.xml": "<ENVELOPE>\n<HEADER>\n<VERSION>1</VERSION>\n        <TALLYREQUEST>Export</TALLYREQUEST>\n        <TYPE>Collection</TYPE>\n        <ID>TDLID</ID>\n    </HEADER>\n\n    <BODY>\n        <DESC>\n<STATICVARIABLES>\n            <SVEXPORTFORMAT>$$SysName:XML</SVEXPORTFORMAT>\n<SVCURRENTCOMPANY>Mani9</SVCURRENTCOMPANY>\n            </STATICVARIABLES>\n\n            <TDL>\n                <TDLMESSAGE>\n                    <COLLECTION NAME=\"TDLID\">\n<TYPE>Unit</TYPE><FETCH>$$Alias:Name</FETCH>\n                    </COLLECTION>\n                </TDLMESSAGE>\n            </TDL>\n        </DESC>\n    </BODY>\n</ENVELOPE>",
+    "tally/masters/units/all.js": "export const sendXml = async ({\n    xml,\n    url = 'http://localhost:9000'\n} = {}) => {\n    const res = await fetch(url, {\n        method: 'POST',\n        headers: {\n            'Content-Type': 'text/xml'\n        },\n        body: `<ENVELOPE>\n<HEADER>\n<VERSION>1</VERSION>\n        <TALLYREQUEST>Export</TALLYREQUEST>\n        <TYPE>Collection</TYPE>\n        <ID>TDLID</ID>\n    </HEADER>\n\n    <BODY>\n        <DESC>\n<STATICVARIABLES>\n            <SVEXPORTFORMAT>$$SysName:XML</SVEXPORTFORMAT>\n<SVCURRENTCOMPANY>Mani9</SVCURRENTCOMPANY>\n            </STATICVARIABLES>\n\n            <TDL>\n                <TDLMESSAGE>\n                    <COLLECTION NAME=\"TDLID\">\n<TYPE>Unit</TYPE><FETCH>$$Alias:Name</FETCH>\n                    </COLLECTION>\n                </TDLMESSAGE>\n            </TDL>\n        </DESC>\n    </BODY>\n</ENVELOPE>`\n    });\n\n    return await res.text();\n};",
+    "tally/masters/units/index.js": "import * as all from './all.js';\nexport { all };",
+    "tally/masters/index.js": "import * as units from './units/index.js';\nexport { units };",
+    "tally/index.js": "import * as masters from './masters/index.js';\nexport { masters };"
 }
