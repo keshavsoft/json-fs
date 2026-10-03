@@ -1,0 +1,44 @@
+{
+    "name": "my-project",
+    "type": "folder",
+    "children": [
+        {
+            "name": "src",
+            "type": "folder",
+            "children": [
+                {
+                    "name": "utils",
+                    "type": "folder",
+                    "children": [
+                        {
+                            "name": "helper.js",
+                            "type": "file"
+                        },
+                        {
+                            "name": "constants.js",
+                            "type": "file"
+                        }
+                    ]
+                },
+                {
+                    "name": "index.js",
+                    "type": "file"
+                }
+            ]
+        },
+        {
+            "name": "docs",
+            "type": "folder",
+            "children": [
+                {
+                    "name": "README.md",
+                    "type": "file"
+                }
+            ]
+        },
+        {
+            "name": "package.json",
+            "type": "file"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "my-project/package.json": {
+        "name": "my-sample-project",
+        "version": "1.0.0",
+        "description": "Generated via json-fs v2",
+        "main": "src/index.js"
+    },
+    "my-project/src/index.js": "// Application entry point\nconsole.log('App successfully launched!');\nexport default {};\n",
+    "my-project/src/utils/helper.js": "export const greet = (name) => `Hello, ${name}!`;\n",
+    "my-project/src/utils/constants.js": "export const APP_NAME = 'MySampleApp';\nexport const VERSION = '1.0.0';\n",
+    "my-project/docs/README.md": "# My Sample Project\n\nGenerated automatically via json-fs v2.\n"
+}
