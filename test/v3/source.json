@@ -1,0 +1,10 @@
+{
+    "tally": {
+        "masters": {
+            "units": {
+                "name": "all.js",
+                "type": "file"
+            }
+        }
+    }
+}
