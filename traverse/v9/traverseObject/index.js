@@ -1,6 +1,11 @@
 import traverse from "../traverse.js";
 
-const traverseObject = (specJson, relativePath, dataJson) => {
+const traverseObject = async (
+    specJson,
+    relativePath,
+    dataJson
+) => {
+
     for (const [key, value] of Object.entries(specJson)) {
 
         if (typeof value === "object" && value !== null) {
@@ -9,7 +14,7 @@ const traverseObject = (specJson, relativePath, dataJson) => {
                 ? `${relativePath}.${key}`
                 : key;
 
-            const result = traverse(
+            const result = await traverse(
                 value,
                 nextPath,
                 dataJson
