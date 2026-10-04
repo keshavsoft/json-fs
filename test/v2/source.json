@@ -1,0 +1,38 @@
+{
+    "name": "tally",
+    "type": "folder",
+    "children": [
+        {
+            "name": "masters",
+            "type": "folder",
+            "children": [
+                {
+                    "name": "units",
+                    "type": "folder",
+                    "children": [
+                        {
+                            "name": "all.js",
+                            "type": "file"
+                        },
+                        {
+                            "name": "body.xml",
+                            "type": "file"
+                        },
+                        {
+                            "name": "index.js",
+                            "type": "file"
+                        }
+                    ]
+                },
+                {
+                    "name": "index.js",
+                    "type": "file"
+                }
+            ]
+        },
+        {
+            "name": "index.js",
+            "type": "file"
+        }
+    ]
+}
