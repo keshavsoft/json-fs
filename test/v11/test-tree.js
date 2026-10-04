@@ -22,7 +22,7 @@ const execute = async ({ path, args }) => {
             },
             body: xml
         }).then(response => response.text());
-    }
+    };
 
     let body = definition.body;
 
