@@ -1,0 +1,38 @@
+export const sendXml = async ({
+    xml,
+    url = 'http://localhost:9000'
+} = {}) => {
+    const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'text/xml'
+        },
+        body: `<ENVELOPE>
+<HEADER>
+<VERSION>1</VERSION>
+        <TALLYREQUEST>Export</TALLYREQUEST>
+        <TYPE>Collection</TYPE>
+        <ID>TDLID</ID>
+    </HEADER>
+
+    <BODY>
+        <DESC>
+<STATICVARIABLES>
+            <SVEXPORTFORMAT>$$SysName:XML</SVEXPORTFORMAT>
+<SVCURRENTCOMPANY>Mani9</SVCURRENTCOMPANY>
+            </STATICVARIABLES>
+
+            <TDL>
+                <TDLMESSAGE>
+                    <COLLECTION NAME="TDLID">
+<TYPE>Unit</TYPE><FETCH>$$Alias:Name</FETCH>
+                    </COLLECTION>
+                </TDLMESSAGE>
+            </TDL>
+        </DESC>
+    </BODY>
+</ENVELOPE>`
+    });
+
+    return await res.text();
+};
