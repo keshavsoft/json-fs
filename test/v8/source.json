@@ -1,0 +1,11 @@
+{
+    "tally": {
+        "masters": {
+            "units": {
+                "all": {
+                    "body": "<ENVELOPE>\n                        <COMPANY>{COMPANY}</COMPANY>\n                        <REQUEST>GET_UNITS</REQUEST>\n                    </ENVELOPE>"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,75 @@
+// test-tree.js
+
+const source = {
+    masters: {
+        units: {
+            all: {
+                body: `
+                    <ENVELOPE>
+                        <COMPANY>${"{COMPANY}"}</COMPANY>
+                        <REQUEST>GET_UNITS</REQUEST>
+                    </ENVELOPE>
+                `
+            }
+        }
+    }
+};
+
+const getByPath = (source, path) => {
+    return path
+        .split(".")
+        .reduce((current, key) => current?.[key], source);
+};
+
+const execute = ({ path, args }) => {
+    const definition = getByPath(source, path);
+
+    let body = definition.body;
+
+    body = body.replace(
+        "{COMPANY}",
+        args.company
+    );
+
+    console.log("PATH:", path);
+    console.log("BODY:");
+    console.log(body);
+
+    return body;
+};
+
+const buildTree = (node, path = "") => {
+    const result = {};
+
+    for (const [key, value] of Object.entries(node)) {
+        const currentPath = path
+            ? `${path}.${key}`
+            : key;
+
+        if (value?.body) {
+            result[key] = (args) =>
+                execute({
+                    path: currentPath,
+                    args
+                });
+        } else {
+            result[key] = buildTree(
+                value,
+                currentPath
+            );
+        }
+    }
+
+    return result;
+};
+
+const tally = buildTree(source);
+
+// ---- OUTSIDE NPM USER ----
+
+const result = tally.masters.units.all({
+    company: "My Company"
+});
+
+console.log("RETURNED:");
+console.log(result);
