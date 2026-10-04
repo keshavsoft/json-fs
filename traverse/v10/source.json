@@ -13,6 +13,15 @@
                     },
                     "action": "fetch"
                 }
+            },
+            "stockItems": {
+                "withBatches": {
+                    "tdl": {
+                        "collection": "<TYPE>StockItem</TYPE><FETCH>$$Alias:Name</FETCH><FETCH>BaseUnits</FETCH><FETCH>BatchAllocations.*</FETCH>",
+                        "company": "mani9"
+                    },
+                    "action": "fetch"
+                }
             }
         }
     }
