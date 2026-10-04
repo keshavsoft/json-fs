@@ -1,0 +1,9 @@
+{
+    "name": "tally-public-api-demo",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "test": "node test.js",
+        "test:api": "node external-api/test.js"
+    }
+}

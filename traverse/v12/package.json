@@ -1,0 +1,11 @@
+{
+    "name": "tally-public-api",
+    "version": "1.0.0",
+    "type": "module",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "scripts": {
+        "generate:dts": "node generate-dts.js",
+        "test": "node test.js"
+    }
+}

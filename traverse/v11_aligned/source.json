@@ -12,24 +12,21 @@
         },
         "masters": {
             "units": {
-                "all": {
-                    "body": "kkkkkkkkkk"
-                },
                 "fetch": {
+                    "action": "fetch",
                     "tdl": {
-                        "collection": "<TYPE>Unit</TYPE>\n<FETCH>$$Alias:Name</FETCH>\n",
-                        "company": "mani9"
-                    },
-                    "action": "fetch"
+                        "company": "mani9",
+                        "collection": "<TYPE>Unit</TYPE>\n<FETCH>$$Alias:Name</FETCH>\n"
+                    }
                 }
             },
             "stockItems": {
                 "withBatches": {
+                    "action": "fetch",
                     "tdl": {
-                        "collection": "<TYPE>StockItem</TYPE><FETCH>$$Alias:Name</FETCH><FETCH>BaseUnits</FETCH><FETCH>BatchAllocations.*</FETCH>",
-                        "company": "mani9"
-                    },
-                    "action": "fetch"
+                        "company": "mani9",
+                        "collection": "<TYPE>StockItem</TYPE><FETCH>$$Alias:Name</FETCH><FETCH>BaseUnits</FETCH><FETCH>BatchAllocations.*</FETCH>"
+                    }
                 }
             }
         }

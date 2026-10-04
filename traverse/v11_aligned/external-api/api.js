@@ -1,9 +1,17 @@
 import source from "../source.json" with { type: "json" };
-import traverse from "../traverse.js";
 import apiPaths from "./api.json" with { type: "json" };
+import resolve from "../runtime/resolve.js";
 
-const createFunction = (path) => async () => {
-    return await traverse(source, "", path);
+const createFunction = (path) => {
+    return async (...args) => {
+        if (args.length > 0) {
+            throw new Error(
+                `${path}() does not accept arguments yet.`
+            );
+        }
+
+        return await resolve(source, path);
+    };
 };
 
 const createApi = (paths) => {
@@ -11,6 +19,11 @@ const createApi = (paths) => {
 
     for (const path of paths) {
         const parts = path.split(".");
+
+        if (parts[0] === "tally") {
+            parts.shift();
+        }
+
         let current = root;
 
         parts.forEach((part, index) => {
@@ -26,9 +39,7 @@ const createApi = (paths) => {
         });
     }
 
-    const rootName = paths[0]?.split(".")[0];
-
-    return rootName ? root[rootName] : root;
+    return root;
 };
 
 export default createApi(apiPaths);
